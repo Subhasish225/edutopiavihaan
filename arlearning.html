@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>&lt;model-viewer&gt; example</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/demo-styles.css">
+
+  <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+
+</head>
+
+<body>
+  <div id="card">
+    <model-viewer id="hotspot-demo" ar ar-modes="webxr" touch-action="pan-y" src="images/human_skeleton_.glb"
+      ios-src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.usdz?v=1569545377878"
+      poster="images/human_skeleton.webp" alt="A 3D model of an skeleton" shadow-intensity="1" camera-controls
+      auto-rotate ar>
+
+      <button class="hover" class="hotspot" slot="hotspot-hand" data-position="0 6.93 0.1" data-normal="-0.73 0.05 0.69">
+        <div class="annotation">
+          <!-- Skull -->
+          <div id="welcomeDiv1"  style="display:none;" class="answer_list" > Skull</div>
+                      <input id="btnhide1" type="button" name="answer" value="Click To View" onclick="showDiv1()">
+        </div>
+      </button>
+
+      <button class="hover" class="hotspot" slot="hotspot-foot" data-position="-1 -1 0.1" data-normal="-0.73 0.05 0.69">
+        <div class="annotation">
+          <!-- Femur -->
+          <div id="welcomeDiv2"  style="display:none;" class="answer_list" >Femur</div>
+                      <input id="btnhide2" type="button" name="answer" value="Click To View" onclick="showDiv2()">
+        </div>
+        </div>
+      </button>
+
+      <!-- <button class="hover" class="hotspot" slot="hotspot-visor" data-position="5 8 0.1" data-normal="-0.73 0.05 0.69">
+        <div class="annotation">
+          Humerus
+          <div id="welcomeDiv"  style="display:none;" class="answer_list" > Skull</div>
+                        <input type="button" name="answer" value="" onclick="showDiv()"> -->
+        <!-- </div>
+      </button> -->
+      <!-- <button class="hover" class="hotspot" slot="hotspot-foot" data-position="0 6.93 0.1" data-normal="-0.73 0.05 0.69">
+        <div class="annotation">
+           Femur -->
+          <!-- <div id="welcomeDiv3"  style="display:none;" class="answer_list" >Humerus</div>
+                      <input id="btnhide3" type="button" name="answer" value="" onclick="showDiv3()">
+        </div>
+        </div>
+      </button> -->
+
+
+      <!-- <div id="welcomeDiv"  style="display:none;" class="answer_list" > WELCOME</div>
+                  <input type="button" name="answer" value="Show Hand" onclick="showDiv()" />
+                  <div id="welcomeDiv"  style="display:none;" class="answer_list" > WELCOME</div>
+                  <input type="button" name="answer" value="Show legs" onclick="showDiv()" /> -->
+      <!-- <button class="hotspot" slot="hotspot-foot" data-position="0.16 0.1 0.17" data-normal="-0.07 0.97 0.54" data-visibility-attribute="visible"></button> -->
+    </model-viewer>
+  </div>
+  <div id="card">
+    <model-viewer src="images/microscope.glb"
+      ios-src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.usdz?v=1569545377878"
+      poster="images/microscope.png" alt="A 3D model of an astronaut" shadow-intensity="1" camera-controls auto-rotate
+      ar>
+    </model-viewer>
+  </div>
+  <div id="card">
+    <model-viewer src="images/realistic_human_heart.glb"
+      ios-src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.usdz?v=1569545377878"
+      poster="images/heart.jpg" alt="A 3D model of an astronaut" shadow-intensity="1" camera-controls auto-rotate ar>
+    </model-viewer>
+  </div>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    const hover = document.getElementById("hover");
+    hover.addEventListener('click', e => {
+      console.log('clicked body');
+    });
+
+  </script>
+  <script>
+    function showDiv1() {
+      document.getElementById('welcomeDiv1').style.display = "block";
+      document.getElementById('btnhide1').style.display = "none";
+    }
+    function showDiv2() {
+      document.getElementById('welcomeDiv2').style.display = "block";
+      document.getElementById('btnhide2').style.display = "none";
+    }
+    function showDiv3() {
+      document.getElementById('welcomeDiv3').style.display = "block";
+      document.getElementById('btnhide3').style.display = "none";
+    }
+  </script>
+</body>
+
+</html>
+
+
+<style>
+  .hotspot {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: blue;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  .hotspot[slot="hotspot-hand"] {
+    --min-hotspot-opacity: 0;
+    background-color: red;
+  }
+
+  .hotspot[slot="hotspot-foot"]:not([data-visible]) {
+    background-color: transparent;
+    border: 3px solid blue;
+  }
+
+  .annotation {
+    background-color: #888888;
+    position: absolute;
+    transform: translate(10px, 10px);
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  /* This keeps child nodes hidden while the element loads */
+  :not(:defined)>* {
+    display: none;
+  }
+</style>
