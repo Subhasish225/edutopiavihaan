@@ -57,21 +57,15 @@ Our platform leverages the following technologies:
 
 We are Team DEViLS, a multidisciplinary group dedicated to shaping the future of education through technology:
 
-- **David:** Lead Developer
-- **Emily:** UX/UI Designer
-- **Victor:** AR Specialist
-- **Linda:** VR Specialist
-- **Sam:** Educational Content Creator
+- **Subhasish Panda:** 
+- **Aman Sharma:**
+- **Ishaan Minocha:**
 
 ## 7. Contributing
 
 We welcome contributions to enhance the platform. If you're interested, please read our [Contribution Guidelines](CONTRIBUTING.md).
 
-## 8. Contact
-
-For questions or feedback, reach out to us at contact@edutopia-metaverse.com
-
-## 9. License
+## 8. License
 
 Edutopia Metaverse Platform is released under the [MIT License](LICENSE).
 
