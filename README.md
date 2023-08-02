@@ -57,9 +57,9 @@ Our platform leverages the following technologies:
 
 We are Team DEViLS, a multidisciplinary group dedicated to shaping the future of education through technology:
 
-- **Subhasish Panda:** 
-- **Aman Sharma:**
-- **Ishaan Minocha:**
+- **Subhasish Panda** 
+- **Aman Sharma**
+- **Ishaan Minocha**
 
 ## 7. Contributing
 
