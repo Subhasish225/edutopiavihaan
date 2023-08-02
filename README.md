@@ -1,6 +1,5 @@
 # Edutopia Metaverse Platform README
 
-![Edutopia Metaverse Platform Logo](logo.png)
 
 ## Table of Contents
 1. [Introduction](#introduction)
